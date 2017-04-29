@@ -13,15 +13,24 @@ lineReader.on('line', lineLog);
 
 function lineLog(line) {
   if (i > firstLine - 1) {
-    const url = line.split(',')[1];
+    const host = line.split(',')[1];
     const startDate = Date.now();
     http
-      .get('http://' + url, res => {
-        console.log(url, res.statusCode, Date.now() - startDate);
-      })
+      .get(
+        {
+          host,
+          headers: {
+            'User-Agent': 'WebsitePoller/1.0',
+            Accept: '*/*',
+          },
+        },
+        res => {
+          console.log(host, res.statusCode, Date.now() - startDate);
+        }
+      )
       .on('error', e => {
         console.error(
-          `Got error: ${e.message} ${url} ${Date.now() - startDate}`
+          `Got error: ${e.message} ${host} ${Date.now() - startDate}`
         );
       });
   }
