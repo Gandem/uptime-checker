@@ -20,7 +20,9 @@ function lineLog(line) {
         console.log(url, res.statusCode, Date.now() - startDate);
       })
       .on('error', e => {
-        console.error(`Got error: ${e.message} ${url}`);
+        console.error(
+          `Got error: ${e.message} ${url} ${Date.now() - startDate}`
+        );
       });
   }
   i++;
