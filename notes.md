@@ -101,10 +101,18 @@ Googlebot/2.1 (+http://www.google.com/bot.html)
 
 WebsitePoller/1.0
 
-socket hangup error shows on 39.net, the same method
+an error shows on 39.net, the same method
 for debugging shows that adding an Accept header resolves 
 the issue: `Accept: */*` will be default, unless overriden
 by user configuration
+
+only one website always shows socket hang up
+and refuse TCP connection from within NodeJS. It behaves 
+inconsistently with telnet (timeouts, etc...). Will leave
+the debugging of this issue for later
+
+
+
 
 
 

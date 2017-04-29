@@ -13,24 +13,26 @@ lineReader.on('line', lineLog);
 
 function lineLog(line) {
   if (i > firstLine - 1) {
-    const host = line.split(',')[1];
+    const hostname = line.split(',')[1];
     const startDate = Date.now();
     http
       .get(
         {
-          host,
+          hostname,
           headers: {
             'User-Agent': 'WebsitePoller/1.0',
             Accept: '*/*',
+            'Cache-control': 'no-cache',
+            Connection: 'keep-alive',
           },
         },
         res => {
-          console.log(host, res.statusCode, Date.now() - startDate);
+          console.log(hostname, res.statusCode, Date.now() - startDate);
         }
       )
       .on('error', e => {
         console.error(
-          `Got error: ${e.message} ${host} ${Date.now() - startDate}`
+          `Got error: ${e.message} ${hostname} ${Date.now() - startDate}`
         );
       });
   }
