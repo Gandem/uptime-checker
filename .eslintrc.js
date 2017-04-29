@@ -1,4 +1,7 @@
 module.exports = {
+    parserOptions: {
+        sourceType: 'script',
+    },
     rules: {
         indent: [2, 4],
         'no-param-reassign': 0,
@@ -10,6 +13,7 @@ module.exports = {
                 functions: 'ignore',
             },
         ],
+        strict: ['error', 'global'],
     },
 
     env: {
