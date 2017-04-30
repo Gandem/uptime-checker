@@ -112,7 +112,53 @@ inconsistently with telnet (timeouts, etc...). Will leave
 the debugging of this issue for later
 
 
+Handling errors:
 
+Semantic check in the caller to see if object instance of Error,
+which makes the caller entierly dependent to the implementation 
+of this function.
 
+```javascript
+/**
+ * Load the JSON Configuration file from the file path
+ * @param {string} filePath The path of the file to load
+ * @return {Object} The configurationObject or an Error object if the JSON could not be parsed
+ */
+function loadConfigurationFile(filePath) {
+    debug(`Loading configuration file from ${filePath}`);
 
+    try {
+        return JSON.parse(readFile(filePath));
+    } catch (err) {
+        debug(`${chalk.red.bold('Error:')} could not read configuration file from ${filePath}`);
+        err.message = `Unable to read the ${chalk.bold('configuration file')} in ${filePath} \n Error: ${err.message}`;
+        return err;
+    }
+}
+```
+
+NodeJS callbacks, is a good way to deal with the issue => but callback hell  
+
+Promises ! That's why most public API in the code return promises :)
+using bluebird promises because they are faster
+
+Configuration files:
+
+Enforcing schema in the given URL :
+
+cannot staticly check if http or https 
+if replacing missing with http, could lead to bad UX:
+
+website with 302 redirect (not permanent redirect 301)
+to an HTTPS resource would expect the https resource to 
+be monitored, however in this case, it is the redirect that 
+would be polled by the http.get
+
+Why not follow the redirect ? Requires a lot of logic, and could 
+be a point of improvement in the code, however the user may want to monitor 
+the redirect. (ex: make sure http clients are actually redirected to https,
+make sure the redirection is fast, etc...) 
+So the answer is not so obvious, and could be dealt with in future 
+iterations of the project. For the scope of the project, enforcing 
+schema seems the best trade-off.
 
