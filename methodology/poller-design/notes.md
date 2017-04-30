@@ -137,6 +137,16 @@ function loadConfigurationFile(filePath) {
 }
 ```
 
+```javascript
+        if (configurationObject instanceof Error) {
+            console.log(
+                chalk.yellow(
+                    `${configurationFile} was ignored because it is not an appropriate JSON`
+                )
+            );
+            return false;
+        }
+```
 NodeJS callbacks, is a good way to deal with the issue => but callback hell  
 
 Promises ! That's why most public API in the code return promises :)
@@ -162,3 +172,4 @@ So the answer is not so obvious, and could be dealt with in future
 iterations of the project. For the scope of the project, enforcing 
 schema seems the best trade-off.
 
+Checking truthiness with === true for better perfs
