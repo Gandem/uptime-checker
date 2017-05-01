@@ -1,4 +1,8 @@
-{
+{ 
+  "name": "uptime-checker",
+  "bin": {
+    "uptime-checker": "lib/cli/cli.js"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --coverage --watch"
@@ -14,7 +18,8 @@
     "debug": "^2.6.6",
     "joi": "^10.4.1",
     "strip-bom": "^3.0.0",
-    "url-regex": "^4.0.0"
+    "url-regex": "^4.0.0",
+    "yargs": "^7.1.0"
   },
   "jest": {
     "testEnvironment": "node"
