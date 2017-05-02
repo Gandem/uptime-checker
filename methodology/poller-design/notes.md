@@ -173,3 +173,20 @@ iterations of the project. For the scope of the project, enforcing
 schema seems the best trade-off.
 
 Checking truthiness with === true for better perfs
+
+we want to let our poller run in its own processn so it keeps polling in 
+the background.
+
+we want a client to be able to "ping" the poller to see if it's up
+(the client would be the cli / the dashboard)
+
+-> IPC 
+
+Checking how other libs do it 
+
+pm2 has it's own ipc implemented (rpc with axon mq)
+
+seems a bit outdated, and overkill for our use case + not well documented
+
+solution => node-ipc, well maintained + documented + works out of the box
+on \*nixes + windows
