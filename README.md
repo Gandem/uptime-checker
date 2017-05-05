@@ -5,7 +5,10 @@
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-
+- [Using the dashboard](#using-the-dashboard)
+- [Code style rules](#code-style-rules)
+- [Testing](#testing)
+- [Folder structure](#folder-structure)
 
 Intro
 -----
@@ -141,6 +144,17 @@ Options:
 The daemon will poll the websites in the backgroud. The daemon must be running for the dashboard to work properly.
 
 If the daemons errors while running, it will create an error file in the project directory
+
+Using the dashboard 
+------------------
+
+If the daemon is started (check with `uptime-checker status`), you can start the dashboard with :
+
+`uptime-checker dashboard`
+
+Use left and right arrow keys to navigate between websites.
+
+If there are alerts, use up and down arrow keys to see all the alerts.
 
 Code style rules
 ---------------
