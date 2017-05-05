@@ -198,3 +198,5 @@ add windows compatibility
 stocker min/max/average dans une base de données
 
 test what's not tested
+
+implementing reload
