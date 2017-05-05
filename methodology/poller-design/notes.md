@@ -190,3 +190,11 @@ seems a bit outdated, and overkill for our use case + not well documented
 
 solution => node-ipc, well maintained + documented + works out of the box
 on \*nixes + windows
+
+extract aggregator code 
+
+add windows compatibility 
+
+stocker min/max/average dans une base de données
+
+test what's not tested
