@@ -12,7 +12,7 @@ Intro
 
 This projet is my work for the website poller **cli-based** exercice proposed by **Datadog**
 
-The architecture consideration can be found in Architecture.md
+The architecture consideration can be found in [Architecture.md](Architecture.md)
 
 Requirements
 -----------
