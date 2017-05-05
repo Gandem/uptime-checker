@@ -1,0 +1,14 @@
+{
+  "website": [{
+    "url": "http://google.com"
+  }, {
+    "url": "http://hepsiburada.com"
+  }, {
+    "url": "http://127.0.0.1",
+    "httpOptions": {
+         "port": "8080"
+    }
+  }, {
+    "url": "https://www.datadoghq.com/"
+  }]
+}
