@@ -26,6 +26,18 @@ Further more, the project has been throughly tested on **Mac-os only**, but shou
 
 There is still a little work left to make the project compatible for **Windows**.
 
+#### Setting up the database
+
+If you want the project to work out of the box with uptime-checker.template.json, you should :
+
+* Install influxdb
+* Start influxdb
+* Create a database called 'uptime-checker' :
+
+`create database "uptime-checker"`
+
+The double quotes are important !
+
 Installation
 -----------
 
@@ -61,6 +73,7 @@ If you don't want to bother linking the binaries you can juste invoke the cli bi
 
 `./lib/cli/cli.js [commands] ...`
 
+
 Configuration
 -----------
 
@@ -76,6 +89,12 @@ It is named `uptime-checker.json` or `.uptime-checker.json` and located in one o
  * (Only on a Linux-based Operating System) In /etc/uptime-checker/
 
  You can also pass the configuration file with the cli using the `-c` flag. With accepts relative pathes.
+
+ For smoother testing, you can :
+
+ `cp uptime-checker{.template,}.json` 
+
+ You'll have a configuration file already configured.
 
  The configuration file is statically checked and validated before the application starts, and it should respect the following rules :
 
