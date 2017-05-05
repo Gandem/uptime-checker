@@ -8,6 +8,7 @@
 - [Using the dashboard](#using-the-dashboard)
 - [Code style rules](#code-style-rules)
 - [Testing](#testing)
+- [Testing Alert Logic](#testing-alert-logic)
 - [Folder structure](#folder-structure)
 
 Intro
@@ -189,7 +190,15 @@ Or
 npm run test:watch
 ```
 
-The alerting logic testing is done with...
+Testing Alert Logic 
+------------------
+
+The default template configuration file already expects a website on localhost:8080.
+
+You can test manually the alerting logic by starting the daemon with the template config file,
+then up the test server with : `node test-server.js`
+
+The server should be on the third page of the dashboard, and you can see availability going up / down, and the recovering logic manually !
 
 Folder structure
 ----------------
